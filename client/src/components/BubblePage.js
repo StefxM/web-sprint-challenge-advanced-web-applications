@@ -9,12 +9,12 @@ const BubblePage = () => {
   // fetch your colors data from the server when the component mounts
   // set that data to the colorList state property
   useEffect(()=>{
-    axiosWithAuth().get(`http://localhost:5000/api/colors`, colorList)
+    axiosWithAuth().get(`/api/colors`, colorList)
     .then(res => {
       setColorList(res.data);
     })
     .catch(err => console.log(err))
-  }, [colorList])
+  }, [])
   
   return (
     <>
