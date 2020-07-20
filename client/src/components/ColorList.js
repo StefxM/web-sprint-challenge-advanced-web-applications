@@ -6,7 +6,7 @@ const initialColor = {
   color: "",
   code: { hex: "" }
 };
-
+                    //axios call
 const ColorList = ({ colors, updateColors }) => {
   //console.log(colors);
   const [editing, setEditing] = useState(false);
@@ -23,7 +23,7 @@ const ColorList = ({ colors, updateColors }) => {
     e.preventDefault();
     // Make a put request to save your updated color
     // think about where will you get the id from...
-    // where is it saved right now?
+    // where is it saved right now? /// using form state in URL
     axiosWithAuth().put(`/api/colors/${colorToEdit.id}`, colorToEdit)
     .then(res => {
      updateColors([...colors.filter(color => color.id !== colorToEdit.id ),res.data])})
